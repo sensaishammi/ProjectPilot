@@ -89,10 +89,7 @@ export default function AddClientModal() {
                       onChange={(e) => setPhone(e.target.value)}
                     />
                   </div>
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                  >
+                  <button type="submit" className="btn btn-primary">
                     Submit
                   </button>
                 </form>

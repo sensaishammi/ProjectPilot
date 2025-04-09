@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaEdit } from 'react-icons/fa';
+import { FaEdit, FaTrash } from 'react-icons/fa';
 import DeleteProjectButton from './DeleteProjectButton';
 
 export default function ProjectCard({ project }) {
@@ -13,7 +13,7 @@ export default function ProjectCard({ project }) {
           <div>
             <Link
               to={`/projects/${project.id}`}
-              className="btn btn-light btn-sm me-2"
+              className="btn btn-primary btn-sm me-2"
               title="Edit Project"
             >
               <FaEdit className="icon" />

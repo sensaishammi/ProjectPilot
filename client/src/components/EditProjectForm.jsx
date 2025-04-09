@@ -36,43 +36,43 @@ export default function EditProjectForm({ project }) {
   };
 
   return (
-    <div className='mt-5'>
-      <h3>Update Project Details</h3>
+    <div className="mt-5 p-4 border border-gray-600 rounded-lg bg-gray-800">
+      <h3 className="text-lg font-medium text-gray-200 mb-4">Update Project Details</h3>
       <form onSubmit={onSubmit}>
-        <div className='mb-3'>
-          <label className='form-label'>Name</label>
+        <div className="mb-3">
+          <label className="form-label text-gray-200">Name</label>
           <input
-            type='text'
-            className='form-control'
-            id='name'
+            type="text"
+            className="form-control border-gray-600"
+            id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div className='mb-3'>
-          <label className='form-label'>Description</label>
+        <div className="mb-3">
+          <label className="form-label text-gray-200">Description</label>
           <textarea
-            className='form-control'
-            id='description'
+            className="form-control border-gray-600"
+            id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
         </div>
-        <div className='mb-3'>
-          <label className='form-label'>Status</label>
+        <div className="mb-3">
+          <label className="form-label text-gray-200">Status</label>
           <select
-            id='status'
-            className='form-select'
+            id="status"
+            className="form-select border-gray-600"
             value={status}
             onChange={(e) => setStatus(e.target.value)}
           >
-            <option value='Not Started'>Not Started</option>
-            <option value='In Progress'>In Progress</option>
-            <option value='Completed'>Completed</option>
+            <option value="Not Started">Not Started</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
           </select>
         </div>
 
-        <button type='submit' className='btn btn-primary'>
+        <button type="submit" className="btn btn-primary w-full">
           Submit
         </button>
       </form>

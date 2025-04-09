@@ -16,16 +16,22 @@ export default function Project() {
   return (
     <>
       {!loading && !error && (
-        <div className='mx-auto w-75 card p-5'>
-          <Link to='/' className='btn btn-light btn-sm w-25 d-inline ms-auto'>
+        <div className='mx-auto w-75 card p-5 bg-gray-800 border border-gray-600'>
+          <Link to='/' className='btn btn-primary btn-sm w-25 d-inline ms-auto mb-4'>
             Back
           </Link>
 
-          <h1>{data.project.name}</h1>
-          <p>{data.project.description}</p>
+          <div className="p-4 border border-gray-600 rounded-lg bg-gray-800 mb-4">
+            <h1 className="text-2xl font-semibold text-gray-200 mb-2">{data.project.name}</h1>
+            <p className="text-gray-300">{data.project.description}</p>
+          </div>
 
-          <h5 className='mt-3'>Project Status</h5>
-          <p className='lead'>{data.project.status}</p>
+          <div className="p-4 border border-gray-600 rounded-lg bg-gray-800 mb-4">
+            <h5 className="text-lg font-medium text-gray-200 mb-4">Project Status</h5>
+            <p className="text-gray-200 p-3 border border-gray-600 rounded bg-gray-700">
+              {data.project.status}
+            </p>
+          </div>
 
           <ClientInfo client={data.project.client} />
 

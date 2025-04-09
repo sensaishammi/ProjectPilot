@@ -46,7 +46,7 @@ export default function AddProjectModal() {
     <>
       <button
         type="button"
-        className="btn btn-primary"
+        className="btn btn-primary me-2"
         onClick={() => setShow(true)}
       >
         Add Project
@@ -107,17 +107,14 @@ export default function AddProjectModal() {
                       onChange={(e) => setClientId(e.target.value)}
                     >
                       <option value="">Select Client</option>
-                      {clientsData?.clients?.map((client) => (
+                      {clientsData?.clients.map((client) => (
                         <option key={client.id} value={client.id}>
                           {client.name}
                         </option>
                       ))}
                     </select>
                   </div>
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                  >
+                  <button type="submit" className="btn btn-primary">
                     Submit
                   </button>
                 </form>
