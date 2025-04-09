@@ -1,16 +1,28 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
+import { useNavigate } from 'react-router-dom';
 import { GET_PROJECT } from '../queries/projectQueries';
 import { UPDATE_PROJECT } from '../mutations/projectMutations';
 
 export default function EditProjectForm({ project }) {
+  const navigate = useNavigate();
   const [name, setName] = useState(project.name);
   const [description, setDescription] = useState(project.description);
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState(project.status);
 
   const [updateProject] = useMutation(UPDATE_PROJECT, {
-    variables: { id: project.id, name, description, status },
+    variables: { 
+      id: project.id, 
+      name, 
+      description, 
+      status: status === 'Not Started' ? 'new' : 
+              status === 'In Progress' ? 'progress' : 
+              'completed' 
+    },
     refetchQueries: [{ query: GET_PROJECT, variables: { id: project.id } }],
+    onCompleted: () => {
+      navigate('/');
+    }
   });
 
   const onSubmit = (e) => {
@@ -20,7 +32,7 @@ export default function EditProjectForm({ project }) {
       return alert('Please fill out all fields');
     }
 
-    updateProject(name, description, status);
+    updateProject();
   };
 
   return (
@@ -54,9 +66,9 @@ export default function EditProjectForm({ project }) {
             value={status}
             onChange={(e) => setStatus(e.target.value)}
           >
-            <option value='new'>Not Started</option>
-            <option value='progress'>In Progress</option>
-            <option value='completed'>Completed</option>
+            <option value='Not Started'>Not Started</option>
+            <option value='In Progress'>In Progress</option>
+            <option value='Completed'>Completed</option>
           </select>
         </div>
 
