@@ -1,8 +1,3 @@
-# Project Mgmt App
-Project management app from my [GraphQL crash course](https://youtu.be/BcLNfwF04Kw) on YouTube
-
-## Usage
-
 ### Install backend dependencies
 ```
 npm install
@@ -28,4 +23,4 @@ npm start
 - GraphiQL URL - http://localhost:5000/graphql
 - React App - http://localhost:3000
 
-[Queries & Mutations Gist](https://gist.github.com/bradtraversy/fc527bc9a4659ab8de8e8066f3498723)
+
