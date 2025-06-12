@@ -20,7 +20,7 @@ npm start
 ```
 
 - API URL - http://localhost:5000
-- GraphiQL URL - http://localhost:5000/graphql
+- GraphQL URL - http://localhost:5000/graphql
 - React App - http://localhost:3000
 
 
